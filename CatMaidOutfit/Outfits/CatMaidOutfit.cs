@@ -4,7 +4,7 @@ using KitchenLib.Customs;
 using KitchenLib.Utils;
 using UnityEngine;
 
-namespace KitchenCatMaidOutfit
+namespace KitchenCatMaidOutfit.Outfits
 {
     public class CatMaidOutfit : CustomPlayerCosmetic
     {

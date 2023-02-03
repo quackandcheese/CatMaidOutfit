@@ -102,9 +102,9 @@
     <Reference Include="UnityEngine">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
-	<Reference Include="UnityEngine.AssetBundleModule">
-	  <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
-	</Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
@@ -119,10 +119,14 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CatMaidOutfit.cs" />
+    <Compile Include="Hats\BearMaidHat.cs" />
+    <Compile Include="Outfits\BearMaidOutfit.cs" />
+    <Compile Include="Outfits\CatMaidOutfit.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Outfits\BunnyMaidOutfit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y "$(TargetDir)$(TargetName).dll" "$(TargetDir)..\..\WorkshopFolder\content\" /i</PostBuildEvent>
