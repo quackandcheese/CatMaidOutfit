@@ -21,7 +21,7 @@ namespace KitchenCatMaidOutfit
         // mod version must follow semver e.g. "1.2.3"
         public const string MOD_GUID = "QuackAndCheese.PlateUp.CatMaidOutfit";
         public const string MOD_NAME = "CatMaidOutfit";
-        public const string MOD_VERSION = "0.1.1";
+        public const string MOD_VERSION = "0.1.3";
         public const string MOD_AUTHOR = "QuackAndCheese";
         public const string MOD_GAMEVERSION = ">=1.1.3";
         // Game version this mod is designed for in semver
@@ -32,17 +32,15 @@ namespace KitchenCatMaidOutfit
 
         public static AssetBundle bundle;
 
-        protected override void OnPostActivate(Mod mod)
-        {
-            bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
-        }
-
         protected override void Initialise()
         {
             base.Initialise();
             // For log file output so the official plateup support staff can identify if/which a mod is being used
             LogWarning($"{MOD_GUID} v{MOD_VERSION} in use!");
+        }
 
+        private void AddGameData()
+        {
             // Outfits
             AddGameDataObject<CatMaidOutfit>();
             AddGameDataObject<BunnyMaidOutfit>();
@@ -50,6 +48,15 @@ namespace KitchenCatMaidOutfit
 
             // Hats
             AddGameDataObject<BearMaidHat>();
+        }
+
+        protected override void OnPostActivate(Mod mod)
+        {
+            LogInfo("Attempting to load asset bundle...");
+            bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
+            LogInfo("Done loading asset bundle.");
+
+            AddGameData();
         }
 
         #region Logging
