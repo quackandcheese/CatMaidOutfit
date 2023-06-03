@@ -120,10 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hats\BearMaidHat.cs" />
+    <Compile Include="Hats\FoxMaidHat.cs" />
     <Compile Include="Outfits\BearMaidOutfit.cs" />
     <Compile Include="Outfits\CatMaidOutfit.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Outfits\BunnyMaidOutfit.cs" />
+    <Compile Include="Outfits\FoxMaidOutfit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
